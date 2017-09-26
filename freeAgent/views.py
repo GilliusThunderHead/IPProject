@@ -15,26 +15,31 @@ from .form import UserForm
 
 ##Not sure about the use of DetailView Vs ListView. 
 ##Documentation says DetailView is for when we want to add specifics to the table.
-class accepted_projects(generic.ListView):
-    template_name='templates/accepted_projects.html'
+
+class AcceptedProjects(generic.ListView):
+    template_name = 'accepted_projects.html'
+    model = Project
+    
+
+class AllProjects(generic.ListView):
+    template_name = 'all_projects.html'
+    model = Project
+    
+
+class CreateProject(generic.ListView):
+    template_name = 'create_project.html'
+    model = Project
+    
+
+class EndClientProjects(generic.ListView):
+    template_name = 'end_client_projects.html'
     model=Project
     
-class all_projects(generic.ListView):
-    template_name='templates/all_projects.html'
-    model=Project
-    
-class create_project(generic.ListView):
-    template_name='templates/create_project.html'   
-    model=Project
-    
-class end_client_projects(generic.ListView):
-    template_name='templates/end_client_projects.html'
-    model=Project
-    
-class login(generic.ListView):
-    template_name='templates/login.html'
-    model=Member
-    
+
+class Login(generic.ListView):
+    template_name = 'login.html'
+    model = Member
+
 
 class RegisterForm(View):
     form_class = UserForm
