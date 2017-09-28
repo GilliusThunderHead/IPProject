@@ -60,6 +60,6 @@ class RegisterForm(View):
             password = form.cleaned_data['password']
             user.set_password(password)
             user.save()
-            #return HttpResponseRedirect('/')  # redirect to next page
+            # return HttpResponseRedirect('/')  # redirect to next page
 
             # send_activate email : send_email()
