@@ -108,7 +108,7 @@ class DetailView(LoginRequiredMixin,generic.DetailView):
     
 class ProjectCreate(LoginRequiredMixin,CreateView):
     model=Project
-    fields=['title','cost','description','status','file_type']
+    fields=['title','cost','description','file_type']
 
     def form_valid(self, form):
         """Called when a form is valid and a new project is about to be saved."""
